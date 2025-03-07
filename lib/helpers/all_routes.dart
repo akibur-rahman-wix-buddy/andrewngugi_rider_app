@@ -60,7 +60,7 @@ final class Routes {
 /*driver auth part*/
 
   static const String driverSignIn = "driverSignIn/";
- static const String driverAreaSignIn = "areaSignIn/";
+ static const String driverAreaSignUp = "areaSignIP/";
  static const String driverCarSignUp = "driverCarSignUp/";
  static const String driverSignUpForm = "driverSignUpForm/";
  static const String driveSignUpFrom2 = "driveSignUpFrom2/";
@@ -132,11 +132,30 @@ final class RouteGenerator {
             widget: const DriverSignInScreen(), settings: settings)
             : CupertinoPageRoute(builder: (context) => const DriverSignInScreen());
 
-      case Routes.driverAreaSignIn:
+      // case Routes.driverAreaSignIn:
+      //   return Platform.isAndroid
+      //       ? _FadedTransitionRoute(
+      //       widget: const DriverAreaSignUp(), settings: settings)
+      //       : CupertinoPageRoute(builder: (context) => const DriverAreaSignUp());
+
+
+
+      case Routes.driverAreaSignUp:
+        final args = settings.arguments as Map;
         return Platform.isAndroid
             ? _FadedTransitionRoute(
-            widget: const DriverAreaSignUp(), settings: settings)
-            : CupertinoPageRoute(builder: (context) => const DriverAreaSignUp());
+            widget: ScreenTitle(
+                widget: DriverAreaSignUp(
+                  phoneNumber: args["number"],
+                )),
+            settings: settings)
+            : CupertinoPageRoute(
+            builder: (context) => DriverAreaSignUp(
+                phoneNumber: args["number"],
+            ),
+        );
+
+
 
       case Routes.driverCarSignUp:
         return Platform.isAndroid

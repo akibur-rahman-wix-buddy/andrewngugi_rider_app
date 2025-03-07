@@ -38,7 +38,7 @@ class _DriverSignUpFormState extends State<DriverSignUpForm> {
       child: SafeArea(
         child: Scaffold(
           appBar: const CustomAppBar(
-              title: "Sign In", isCenterd: true, leadingIconUnVisible: true),
+              title: "Sign Up", isCenterd: true, leadingIconUnVisible: true),
           backgroundColor: Colors.transparent,
           body: SingleChildScrollView(
               child: Padding(

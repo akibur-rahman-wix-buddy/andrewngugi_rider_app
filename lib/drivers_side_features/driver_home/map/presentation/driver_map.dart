@@ -41,7 +41,14 @@ class DriverMapScreen extends StatelessWidget {
                   mapController.updateUserLocation();
                 },
                 backgroundColor: Colors.orange,
-                child: const Icon(Icons.my_location, color: Colors.white),
+                child: Obx(() {
+                  // Show a loading indicator or the location icon
+                  return mapController.isLoading.value
+                      ? const CircularProgressIndicator(
+                    valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+                  )
+                      : const Icon(Icons.my_location, color: Colors.white);
+                }),
               ),
             ),
           ],
@@ -50,3 +57,4 @@ class DriverMapScreen extends StatelessWidget {
     );
   }
 }
+
