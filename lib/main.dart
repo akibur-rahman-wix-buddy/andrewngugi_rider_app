@@ -92,8 +92,8 @@ class UtillScreenMobile extends StatelessWidget {
             onGenerateRoute: RouteGenerator.generateRoute,
 
 
-            // home: const DriverSignInScreen(),
-             home: const Loading(),
+            home: const DriverSignUpScreen(),
+             // home: const Loading(),
 
             //  home: HomeScreen(),
           ),

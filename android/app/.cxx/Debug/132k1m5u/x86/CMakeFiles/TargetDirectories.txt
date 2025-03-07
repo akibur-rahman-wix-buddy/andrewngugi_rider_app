@@ -1,0 +1,2 @@
+D:/andrewngugi_rider_app/android/app/.cxx/Debug/132k1m5u/x86/CMakeFiles/edit_cache.dir
+D:/andrewngugi_rider_app/android/app/.cxx/Debug/132k1m5u/x86/CMakeFiles/rebuild_cache.dir

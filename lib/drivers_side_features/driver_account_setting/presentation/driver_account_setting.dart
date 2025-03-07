@@ -269,28 +269,34 @@ class _DriverAccountSettingState extends State<DriverAccountSetting> {
 
                   ),
                   UIHelper.verticalSpace(8.h),
-                  Container(
-                      height: 56.h,
-                      padding: EdgeInsets.all(16.sp),
-                      clipBehavior: Clip.antiAlias,
-                      decoration: ShapeDecoration(
-                        color: Colors.white,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(16),
+                  GestureDetector(
+                    onTap: (){
+                      NavigationService.navigateTo(Routes.driverSignIn);
+                    }
+                    ,
+                    child: Container(
+                        height: 56.h,
+                        padding: EdgeInsets.all(16.sp),
+                        clipBehavior: Clip.antiAlias,
+                        decoration: ShapeDecoration(
+                          color: Colors.white,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(16),
+                          ),
+                          shadows:  const [
+                            BoxShadow(
+                              color: Colors.black12,
+                              blurRadius: 40,
+                              offset: Offset(0, 8),
+                              spreadRadius: 0,
+                            )
+                          ],
                         ),
-                        shadows:  const [
-                          BoxShadow(
-                            color: Colors.black12,
-                            blurRadius: 40,
-                            offset: Offset(0, 8),
-                            spreadRadius: 0,
-                          )
-                        ],
-                      ),
-                      child: const CustomRowInDriverAccount(
-                        title:"Log Out",icon: AppIcons.logout,
-                      )
+                        child: const CustomRowInDriverAccount(
+                          title:"Log Out",icon: AppIcons.logout,
+                        )
 
+                    ),
                   ),
                   UIHelper.verticalSpace(90.h),
 
