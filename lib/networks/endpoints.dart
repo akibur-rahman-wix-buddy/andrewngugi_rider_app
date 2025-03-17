@@ -1,6 +1,7 @@
 // ignore_for_file: constant_identifier_names
 
-const String url = "https://dev.andrewngugi.softvencefsd.xyz/api";
+const String url = "http://dev.andrewngugi.softvencefsd.xyz/api";
+const String imageUrl= "http://dev.andrewngugi.softvencefsd.xyz/";
 
 final class NetworkConstants {
   NetworkConstants._();
@@ -23,6 +24,17 @@ final class Endpoints {
   Endpoints._();
   //backend_url
   static String driverAreaZone() => "/drive-in/zone";
+  static String driverCarType() => "/vehicle-type";
+  static String postDriverNumberSentOTP() => "/driver/sent/otp";
+  static String postDriverNumberOTPVerification() => "/driver/verify/otp";
+  static String postDriverSetProfile() => "/driver/set/profile";
+  static String signInApi() => "/driver/login";
+  static String logout() => "/logout";
+  static String personalProfileApi() => "/driver/profile";
+  static String personalVehicleApi() => "/driver/vehicle/profile";
+  static String updateProfileUrl() => "/driver/profile";
+  static String updateVehicleUrl() => "/driver/vehicle/profile";
+  static String setPasswordUrl() => "/driver/set-new-password";
 
 
 

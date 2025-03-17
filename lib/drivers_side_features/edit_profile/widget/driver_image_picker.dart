@@ -4,12 +4,14 @@ import 'dart:io';
 
 import 'package:andrewngugi_rider_app/assets_helper/app_icons/app_icons.dart';
 import 'package:andrewngugi_rider_app/assets_helper/app_image/app_image.dart';
+import 'package:andrewngugi_rider_app/networks/endpoints.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:image_picker/image_picker.dart';
 
 class DriverImagePicker extends StatefulWidget {
-  const DriverImagePicker({super.key});
+  const DriverImagePicker({super.key, required this.driverImage});
+  final String driverImage;
 
   @override
   _DriverImagePickerState createState() => _DriverImagePickerState();
@@ -42,7 +44,7 @@ class _DriverImagePickerState extends State<DriverImagePicker> {
           radius: 55,
           backgroundImage: _selectedImage != null
               ? FileImage(_selectedImage!) as ImageProvider
-              : const AssetImage(AppImages.profile), // Replace with AppImages.profile
+              : NetworkImage( imageUrl+widget.driverImage,), // Replace with AppImages.profile
         ),
         Positioned(
           bottom: 8,

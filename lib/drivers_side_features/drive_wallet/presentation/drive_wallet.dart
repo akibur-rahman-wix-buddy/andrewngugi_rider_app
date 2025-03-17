@@ -231,10 +231,11 @@ class _DriveWalletScreenState extends State<DriveWalletScreen> {
                      SizedBox(
                        height: 350,
                        child:ListView.builder(
+                         padding: const EdgeInsets.all(0),
                          shrinkWrap: true,
                          itemCount: 10,
                          itemBuilder: (context, index) {
-                           return TransectionCard();
+                           return const TransectionCard();
                          },
                        ),
                      )
@@ -283,7 +284,7 @@ class TransectionCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 SizedBox(
-                  width: 280,
+                  width: 240,
                   child: Row(
                     mainAxisAlignment:
                         MainAxisAlignment.spaceBetween,
@@ -303,7 +304,7 @@ class TransectionCard extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  width: 280,
+                  width: 240.w,
                   child: Row(
                     mainAxisAlignment:
                         MainAxisAlignment.spaceBetween,

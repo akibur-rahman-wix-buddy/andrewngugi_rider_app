@@ -16,7 +16,7 @@ final class GetDriverZoneRx
 
   ValueStream get getAvailableItemsStream => dataFetcher.stream;
 
-  Future<DriverAreaModel?> getNotificationInformation() async {
+  Future<DriverAreaModel?> getAreaInformation() async {
     try {
       DriverAreaModel data = await api.getDriverAreaZone();
       log("$data");
