@@ -33,7 +33,7 @@ class DriverMapScreen extends StatelessWidget {
                   : {},
             ),
             Positioned(
-              bottom: 100.h,
+              bottom: 115.h,
               right: 16,
               child: FloatingActionButton(
                 onPressed: () {

@@ -26,6 +26,9 @@ final class Endpoints {
   static String driverAreaZone() => "/drive-in/zone";
   static String driverCarType() => "/vehicle-type";
   static String postDriverNumberSentOTP() => "/driver/sent/otp";
+  static String postForgetSentOtpUrl() => "/sent/otp";
+  static String postForgetOtpVerification() => "/verify/otp";
+  static String postForgetSetPassword() => "/set/password";
   static String postDriverNumberOTPVerification() => "/driver/verify/otp";
   static String postDriverSetProfile() => "/driver/set/profile";
   static String signInApi() => "/driver/login";

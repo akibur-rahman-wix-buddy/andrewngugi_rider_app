@@ -15,6 +15,7 @@ import 'package:andrewngugi_rider_app/drivers_side_features/driver_home/presenta
 import 'package:andrewngugi_rider_app/drivers_side_features/driver_navigation_screen.dart';
 import 'package:andrewngugi_rider_app/drivers_side_features/edit_profile/presentation/driver_profile.dart';
 import 'package:andrewngugi_rider_app/drivers_side_features/edit_profile/presentation/edit_profile.dart';
+import 'package:andrewngugi_rider_app/drivers_side_features/forget_password/presentation/set_forget_password.dart';import 'package:andrewngugi_rider_app/drivers_side_features/forget_password/presentation/verify_otp.dart';
 import 'package:andrewngugi_rider_app/drivers_side_features/password_conformation/presentation/password.dart';
 import 'package:andrewngugi_rider_app/drivers_side_features/tripe_details/presentation/tripe_details.dart';
 import 'package:flutter/cupertino.dart';
@@ -33,6 +34,7 @@ final class Routes {
   static const String signInUserScreen = '/signInUserScreen';
   static const String signUpUserScreen = '/signUpUserScreen';
   static const String otpVerificationUserScreen = '/otpVerificationUserScreen';
+  static const String setForgetPassword = '/setForgetPassword';
 
   /*navigation screen*/
   static const String navigationScreen = '/navigationScreen';
@@ -66,6 +68,7 @@ final class Routes {
  static const String driveSignUpFrom2 = "driveSignUpFrom2/";
  static const String driveSignUpForm3 = "driveSignUpForm3/";
  static const String driverSignUpVerification = "driverSignUpVerification/";
+ static const String forgetVerification = "forgetVerification/";
  static const String passwordConformation = "passwordConformation/";
   static const String driverPassword = "DriverPassword/";
   static const String driverSignUp = "driverSignUp/";
@@ -262,6 +265,38 @@ final class RouteGenerator {
             number: args["number"],
           ),
         );
+
+      case Routes.forgetVerification:
+        final args = settings.arguments as Map;
+        return Platform.isAndroid
+            ? _FadedTransitionRoute(
+            widget: ScreenTitle(
+                widget: ForgetOtpVerification(
+                  number: args["number"],
+                )),
+            settings: settings)
+            : CupertinoPageRoute(
+          builder: (context) => ForgetOtpVerification(
+            number: args["number"],
+          ),
+        );
+
+      case Routes.setForgetPassword:
+        final args = settings.arguments as Map;
+        return Platform.isAndroid
+            ? _FadedTransitionRoute(
+            widget: ScreenTitle(
+                widget: SetForgetPassword(
+                  number: args["number"],
+                )),
+            settings: settings)
+            : CupertinoPageRoute(
+          builder: (context) =>  SetForgetPassword(
+            number: args["number"],
+          ),
+        );
+
+
 
 
 

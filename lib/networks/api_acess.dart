@@ -13,6 +13,9 @@ import 'package:andrewngugi_rider_app/drivers_side_features/edit_profile/data/po
 import 'package:andrewngugi_rider_app/drivers_side_features/edit_profile/data/post_update_vehicle_data/rx.dart';
 import 'package:andrewngugi_rider_app/drivers_side_features/edit_profile/model/personal_data_model.dart';
 import 'package:andrewngugi_rider_app/drivers_side_features/edit_profile/model/vehicle_profile_model.dart';
+import 'package:andrewngugi_rider_app/drivers_side_features/forget_password/data/send_otp/rx.dart';
+import 'package:andrewngugi_rider_app/drivers_side_features/forget_password/data/set_password/rx.dart';
+import 'package:andrewngugi_rider_app/drivers_side_features/forget_password/data/verify_otp/rx.dart';
 import 'package:andrewngugi_rider_app/drivers_side_features/password_conformation/data/rx.dart';
 import 'package:rxdart/rxdart.dart';
 
@@ -74,6 +77,21 @@ UpdateVehicleRx updateVehicleRx = UpdateVehicleRx(
 );
 
 SetPasswordRx  setPasswordRx = SetPasswordRx(
+  empty: <String, dynamic>{},
+  dataFetcher: BehaviorSubject<Map<String, dynamic>>(),
+);
+
+ForgetOptSentRx  forgetOptSentRx = ForgetOptSentRx(
+  empty: <String, dynamic>{},
+  dataFetcher: BehaviorSubject<Map<String, dynamic>>(),
+);
+
+ForgetOtpVerificationRx  forgetOtpVerificationRx = ForgetOtpVerificationRx(
+  empty: <String, dynamic>{},
+  dataFetcher: BehaviorSubject<Map<String, dynamic>>(),
+);
+
+SetForgetPasswordRx  setForgetPasswordRx = SetForgetPasswordRx(
   empty: <String, dynamic>{},
   dataFetcher: BehaviorSubject<Map<String, dynamic>>(),
 );

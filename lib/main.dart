@@ -11,6 +11,7 @@ import 'drivers_side_features/auth/presentation/driver_sign_in_screen.dart';
 import 'drivers_side_features/auth/presentation/driver_sign_up_screen.dart';
 import 'drivers_side_features/driver_account_setting/presentation/driver_account_setting.dart';
 
+import 'drivers_side_features/forget_password/presentation/send_otp.dart';
 import 'gen/colors.gen.dart';
 import 'helpers/all_routes.dart';
 import 'helpers/di.dart';
@@ -92,7 +93,7 @@ class UtillScreenMobile extends StatelessWidget {
             },
             navigatorKey: NavigationService.navigatorKey,
             onGenerateRoute: RouteGenerator.generateRoute,
-            home: Loading()
+            home: SendForgetOtp()
           ),
         );
       },
