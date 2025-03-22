@@ -13,6 +13,7 @@ class PassTextField extends StatefulWidget {
   final bool isObsecure;
   final double? fieldHeight;
   final double? fieldWidth;
+  final String? Function(String?)? validator; // Added validator
 
   const PassTextField({
     super.key,
@@ -24,6 +25,7 @@ class PassTextField extends StatefulWidget {
     this.isObsecure = true,
     this.fieldHeight,
     this.fieldWidth,
+    this.validator, // Expecting validator
   });
 
   @override
@@ -52,6 +54,7 @@ class _PassTextFieldState extends State<PassTextField> {
       child: Padding(
         padding: const EdgeInsets.all(1.0),
         child: TextFormField(
+          validator: widget.validator, // Using the validator passed to the constructor
           controller: widget.controller,
           obscureText: _isObsecure,
           enabled: widget.isenabled,

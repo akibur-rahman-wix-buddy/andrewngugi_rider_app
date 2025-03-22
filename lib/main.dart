@@ -1,3 +1,4 @@
+import 'package:andrewngugi_rider_app/drivers_side_features/auth/presentation/password_conformation.dart';
 import 'package:auto_animated/auto_animated.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -5,10 +6,12 @@ import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'constants/custome_theme.dart';
 
+import 'drivers_side_features/auth/presentation/drive_sign_up_from_2.dart';
 import 'drivers_side_features/auth/presentation/driver_sign_in_screen.dart';
 import 'drivers_side_features/auth/presentation/driver_sign_up_screen.dart';
 import 'drivers_side_features/driver_account_setting/presentation/driver_account_setting.dart';
 
+import 'drivers_side_features/forget_password/presentation/send_otp.dart';
 import 'gen/colors.gen.dart';
 import 'helpers/all_routes.dart';
 import 'helpers/di.dart';
@@ -90,12 +93,7 @@ class UtillScreenMobile extends StatelessWidget {
             },
             navigatorKey: NavigationService.navigatorKey,
             onGenerateRoute: RouteGenerator.generateRoute,
-
-
-            home: const DriverSignUpScreen(),
-             // home: const Loading(),
-
-            //  home: HomeScreen(),
+            home: SendForgetOtp()
           ),
         );
       },

@@ -43,10 +43,11 @@ class _DriverHomeState extends State<DriverHome> {
             right: 0,
             child: Container(
               padding: const EdgeInsets.all(16),
-              height: 83.h, // Using ScreenUtil for responsive height
+              height: 101.h, // Using ScreenUtil for responsive height
               color: AppColor.buttonColor, // Assuming AppColor is predefined
               child: Column(
                 children: [
+                  UIHelper.verticalSpace(20.h),
                   UIHelper.verticalSpace(20.h),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -132,7 +133,7 @@ class _DriverHomeState extends State<DriverHome> {
             ),
           ),
           Positioned(
-            bottom: 160.h,
+            bottom: 170.h,
             left: 10.w,
             child: Container(
               padding: EdgeInsets.symmetric(horizontal: 10.w),
@@ -177,7 +178,7 @@ class _DriverHomeState extends State<DriverHome> {
             ),
           ),
           Positioned(
-            bottom: 160.h,
+            bottom: 170.h,
             right: 10.w,
             child: Container(
               padding: EdgeInsets.symmetric(horizontal: 10.w),

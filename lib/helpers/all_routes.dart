@@ -15,6 +15,7 @@ import 'package:andrewngugi_rider_app/drivers_side_features/driver_home/presenta
 import 'package:andrewngugi_rider_app/drivers_side_features/driver_navigation_screen.dart';
 import 'package:andrewngugi_rider_app/drivers_side_features/edit_profile/presentation/driver_profile.dart';
 import 'package:andrewngugi_rider_app/drivers_side_features/edit_profile/presentation/edit_profile.dart';
+import 'package:andrewngugi_rider_app/drivers_side_features/forget_password/presentation/set_forget_password.dart';import 'package:andrewngugi_rider_app/drivers_side_features/forget_password/presentation/verify_otp.dart';
 import 'package:andrewngugi_rider_app/drivers_side_features/password_conformation/presentation/password.dart';
 import 'package:andrewngugi_rider_app/drivers_side_features/tripe_details/presentation/tripe_details.dart';
 import 'package:flutter/cupertino.dart';
@@ -33,6 +34,7 @@ final class Routes {
   static const String signInUserScreen = '/signInUserScreen';
   static const String signUpUserScreen = '/signUpUserScreen';
   static const String otpVerificationUserScreen = '/otpVerificationUserScreen';
+  static const String setForgetPassword = '/setForgetPassword';
 
   /*navigation screen*/
   static const String navigationScreen = '/navigationScreen';
@@ -66,6 +68,7 @@ final class Routes {
  static const String driveSignUpFrom2 = "driveSignUpFrom2/";
  static const String driveSignUpForm3 = "driveSignUpForm3/";
  static const String driverSignUpVerification = "driverSignUpVerification/";
+ static const String forgetVerification = "forgetVerification/";
  static const String passwordConformation = "passwordConformation/";
   static const String driverPassword = "DriverPassword/";
   static const String driverSignUp = "driverSignUp/";
@@ -132,42 +135,111 @@ final class RouteGenerator {
             widget: const DriverSignInScreen(), settings: settings)
             : CupertinoPageRoute(builder: (context) => const DriverSignInScreen());
 
-      // case Routes.driverAreaSignIn:
-      //   return Platform.isAndroid
-      //       ? _FadedTransitionRoute(
-      //       widget: const DriverAreaSignUp(), settings: settings)
-      //       : CupertinoPageRoute(builder: (context) => const DriverAreaSignUp());
+
+
 
 
 
       case Routes.driverAreaSignUp:
-        final args = settings.arguments as Map;
         return Platform.isAndroid
             ? _FadedTransitionRoute(
-            widget: ScreenTitle(
-                widget: DriverAreaSignUp(
-                  phoneNumber: args["number"],
-                )),
-            settings: settings)
-            : CupertinoPageRoute(
-            builder: (context) => DriverAreaSignUp(
-                phoneNumber: args["number"],
-            ),
-        );
+            widget: const DriverAreaSignUp(), settings: settings)
+            : CupertinoPageRoute(builder: (context) => const DriverAreaSignUp());
+
+
+
+
+
+
+
+      // case Routes.driverAreaSignUp:
+      //   final args = settings.arguments as Map;
+      //   return Platform.isAndroid
+      //       ? _FadedTransitionRoute(
+      //       widget: ScreenTitle(
+      //           widget: DriverAreaSignUp(
+      //             phoneNumber: args["number"],
+      //           )),
+      //       settings: settings)
+      //       : CupertinoPageRoute(
+      //       builder: (context) => DriverAreaSignUp(
+      //           phoneNumber: args["number"],
+      //       ),
+      //   );
+
+
+
+      // case Routes.driverCarSignUp:
+      //   return Platform.isAndroid
+      //       ? _FadedTransitionRoute(
+      //       widget: const DriverCarSignUp(), settings: settings)
+      //       : CupertinoPageRoute(builder: (context) => const DriverCarSignUp());
 
 
 
       case Routes.driverCarSignUp:
+        final args = settings.arguments as Map;
         return Platform.isAndroid
             ? _FadedTransitionRoute(
-            widget: const DriverCarSignUp(), settings: settings)
-            : CupertinoPageRoute(builder: (context) => const DriverCarSignUp());
+            widget: ScreenTitle(
+                widget: DriverCarSignUp(
+                  areaName:args["areaName"] ,
+                  number: args["number"],
+                )),
+            settings: settings)
+            : CupertinoPageRoute(
+          builder: (context) => DriverCarSignUp(
+            number: args["number"],
+            areaName: args["areaName"],
+          ),
+        );
+
+
+
+
+
+
 
       case Routes.driveSignUpFrom2:
         return Platform.isAndroid
             ? _FadedTransitionRoute(
-            widget: const DriveSignUpFrom2(), settings: settings)
-            : CupertinoPageRoute(builder: (context) => const DriveSignUpFrom2());
+            widget:  DriveSignUpFrom2(), settings: settings)
+            : CupertinoPageRoute(builder: (context) =>  DriveSignUpFrom2());
+
+
+
+
+      //
+      // case Routes.driveSignUpFrom2:
+      //   final args = settings.arguments as Map;
+      //   return Platform.isAndroid
+      //       ? _FadedTransitionRoute(
+      //       widget: ScreenTitle(
+      //           widget: DriveSignUpFrom2(
+      //
+      //             email: args ["email"],
+      //             address: args["address"],
+      //             dateOfBirth: args["dob"],
+      //             fullName: args["fullName"],
+      //           gender: args["gender"],
+      //             nidNumber: args["nidNumber"]
+      //             ,)),
+      //       settings: settings)
+      //       : CupertinoPageRoute(
+      //     builder: (context) => DriveSignUpFrom2(
+      //         email: args ["email"],
+      //         address: args["address"],
+      //         dateOfBirth: args["dob"],
+      //         fullName: args["fullName"],
+      //         gender: args["gender"],
+      //         nidNumber: args["nidNumber"]
+      //     ),
+      //   );
+      //
+
+
+
+
 
       case Routes.driveSignUpForm3:
         return Platform.isAndroid
@@ -176,11 +248,66 @@ final class RouteGenerator {
             : CupertinoPageRoute(builder: (context) => const DriveSignUpForm3());
 
 
+
+
+
       case Routes.driverSignUpVerification:
+        final args = settings.arguments as Map;
         return Platform.isAndroid
             ? _FadedTransitionRoute(
-            widget: const DriverSignUpVerification(), settings: settings)
-            : CupertinoPageRoute(builder: (context) => const DriverSignUpVerification());
+            widget: ScreenTitle(
+                widget: DriverSignUpVerification(
+                  number: args["number"],
+                )),
+            settings: settings)
+            : CupertinoPageRoute(
+          builder: (context) => DriverSignUpVerification(
+            number: args["number"],
+          ),
+        );
+
+      case Routes.forgetVerification:
+        final args = settings.arguments as Map;
+        return Platform.isAndroid
+            ? _FadedTransitionRoute(
+            widget: ScreenTitle(
+                widget: ForgetOtpVerification(
+                  number: args["number"],
+                )),
+            settings: settings)
+            : CupertinoPageRoute(
+          builder: (context) => ForgetOtpVerification(
+            number: args["number"],
+          ),
+        );
+
+      case Routes.setForgetPassword:
+        final args = settings.arguments as Map;
+        return Platform.isAndroid
+            ? _FadedTransitionRoute(
+            widget: ScreenTitle(
+                widget: SetForgetPassword(
+                  number: args["number"],
+                )),
+            settings: settings)
+            : CupertinoPageRoute(
+          builder: (context) =>  SetForgetPassword(
+            number: args["number"],
+          ),
+        );
+
+
+
+
+
+
+
+
+    // case Routes.driverSignUpVerification:
+      //   return Platform.isAndroid
+      //       ? _FadedTransitionRoute(
+      //       widget: const DriverSignUpVerification(), settings: settings)
+      //       : CupertinoPageRoute(builder: (context) => const DriverSignUpVerification());
 
       case Routes.passwordConformation:
         return Platform.isAndroid
@@ -236,11 +363,29 @@ final class RouteGenerator {
             widget: const DriverPassword(), settings: settings)
             : CupertinoPageRoute(builder: (context) => const DriverPassword());
 
+
       case Routes.driverSignUpForm:
+        final args = settings.arguments as Map;
         return Platform.isAndroid
             ? _FadedTransitionRoute(
-            widget: const DriverSignUpForm(), settings: settings)
-            : CupertinoPageRoute(builder: (context) => const DriverSignUpForm());
+            widget: ScreenTitle(
+                widget: DriverSignUpForm(
+                  vehicleId: args["vehicleId"],
+                  area: args ["area"],
+                )),
+            settings: settings)
+            : CupertinoPageRoute(
+            builder: (context) => DriverSignUpForm(
+              vehicleId: args["vehicleId"],
+              area: args ["area"],
+            ),
+        );
+
+      // case Routes.driverSignUpForm:
+      //   return Platform.isAndroid
+      //       ? _FadedTransitionRoute(
+      //       widget: const DriverSignUpForm(), settings: settings)
+      //       : CupertinoPageRoute(builder: (context) => const DriverSignUpForm());
 
 
 

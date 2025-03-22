@@ -4,12 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomUserProfileTextField extends StatelessWidget {
-  const CustomUserProfileTextField({super.key, required this.title, required this.hintText, required this.wight, this.enable, });
+  const CustomUserProfileTextField({super.key, required this.title, required this.hintText, required this.wight, this.enable,  this.controller, });
   final String title;
   final String hintText;
   final double wight;
   final bool? enable;
-
+  final TextEditingController? controller;
 
   @override
   Widget build(BuildContext context) {
@@ -33,6 +33,7 @@ class CustomUserProfileTextField extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: TextFormField(
+              controller: controller,
               decoration: InputDecoration(
                   enabled: enable ?? true,
                   border: InputBorder.none,

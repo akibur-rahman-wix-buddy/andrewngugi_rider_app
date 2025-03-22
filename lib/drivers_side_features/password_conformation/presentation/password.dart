@@ -4,7 +4,9 @@ import 'package:andrewngugi_rider_app/assets_helper/app_image/app_image.dart';
 import 'package:andrewngugi_rider_app/common_widgets/custom_appbar.dart';
 import 'package:andrewngugi_rider_app/common_widgets/custom_button.dart';
 import 'package:andrewngugi_rider_app/common_widgets/pass_text_field.dart';
+import 'package:andrewngugi_rider_app/helpers/toast.dart';
 import 'package:andrewngugi_rider_app/helpers/ui_helpers.dart';
+import 'package:andrewngugi_rider_app/networks/api_acess.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 class DriverPassword extends StatefulWidget {
@@ -15,8 +17,9 @@ class DriverPassword extends StatefulWidget {
 }
 
 class _DriverPasswordState extends State<DriverPassword> {
-  TextEditingController phoneController = TextEditingController();
-  TextEditingController passwordController = TextEditingController();
+  TextEditingController currentPassword = TextEditingController();
+  TextEditingController newPasswordController = TextEditingController();
+  TextEditingController confirmPasswordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +41,7 @@ class _DriverPasswordState extends State<DriverPassword> {
                       Text("Set Your password",style: TextFontStyle.headLine20PoppinsW600,),
                       UIHelper.verticalSpace(16.h),
                       PassTextField(
-                        controller: TextEditingController(),
+                        controller: currentPassword,
                         hintText: 'Old Password',
                         isSufixIcon: true,
                         isObsecure: true,
@@ -46,7 +49,7 @@ class _DriverPasswordState extends State<DriverPassword> {
 
                       UIHelper.verticalSpace(10.h),
                       PassTextField(
-                        controller: TextEditingController(),
+                        controller: newPasswordController,
                         hintText: 'Enter Your Password',
                         isSufixIcon: true,
                         isObsecure: true,
@@ -54,15 +57,23 @@ class _DriverPasswordState extends State<DriverPassword> {
 
                       UIHelper.verticalSpace(10.h),
                       PassTextField(
-                        controller: TextEditingController(),
+                        controller:confirmPasswordController,
                         hintText: 'Enter Your Conform Password',
                         isSufixIcon: true,
                         isObsecure: true,
                       ),
 
                       UIHelper.verticalSpace(80.h),
-                      customButton(name: "Save", onCallBack: ()
-                          {},color: AppColor.buttonColor,borderColor: Colors.transparent, context: context),
+                      customButton(name: "Save", onCallBack: () async
+                          {
+
+                             await setPasswordRx.setPasswordInfo(
+                                currentPassword: currentPassword.text,
+                                newPassword:newPasswordController.text,
+                                confirmPassword: confirmPasswordController.text);
+
+
+                          },color: AppColor.buttonColor,borderColor: Colors.transparent, context: context),
 
 
                     ],

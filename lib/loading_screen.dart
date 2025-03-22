@@ -1,3 +1,4 @@
+import 'package:andrewngugi_rider_app/drivers_side_features/driver_navigation_screen.dart';
 import 'package:andrewngugi_rider_app/drivers_side_features/onboarding_screen/onboarding_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -47,12 +48,12 @@ class _LoadingState extends State<Loading> {
     if (_isLoading) {
       return const WelcomeScreen();
     } else {
-      return const OnboardingScreen();
-      /*return appData.read(kKeyIsLoggedIn)
-          ? WelcomeScreen()
+      // return const OnboardingScreen();
+      return appData.read(kKeyIsLoggedIn)
+          ?const DriverNavigationScreen()
           : appData.read(kKeyfirstTime)
-              ? WelcomeScreen() //AuthRuleScreen()
-              : WelcomeScreen();*/
+          ? const OnboardingScreen() //AuthRuleScreen()
+          : const DriverNavigationScreen();
     }
     /* return TimeAppointmentScreen();
 

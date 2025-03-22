@@ -80,7 +80,7 @@ class _DriverNavigationScreenState extends State<DriverNavigationScreen> {
         ),
         bottomNavigationBar: Padding(
           padding: EdgeInsets.only(
-            bottom: 16.h,
+                        bottom: 16.h,
             right: 16.w,
             left: 16.w,
           ),
@@ -98,7 +98,7 @@ class _DriverNavigationScreenState extends State<DriverNavigationScreen> {
               ],
             ),
             child: Container(
-              height: 80.h,
+              height: 95.h,
               decoration: BoxDecoration(
                 color: Colors.transparent,
                 borderRadius: BorderRadius.all(
@@ -127,7 +127,7 @@ class _DriverNavigationScreenState extends State<DriverNavigationScreen> {
                     selectedIcon: Padding(
                       padding: EdgeInsets.symmetric(vertical: 20.h),
                       child: Container(
-                        height: 45,
+                        height: 45.h,
                         decoration: const BoxDecoration(
                           color: AppColor.cFDF5F0,
                           shape: BoxShape.rectangle,
@@ -161,7 +161,7 @@ class _DriverNavigationScreenState extends State<DriverNavigationScreen> {
                     selectedIcon: Padding(
                       padding: EdgeInsets.symmetric(vertical: 20.h),
                       child: Container(
-                        height: 45,
+                        height: 45.h,
                         decoration: const BoxDecoration(
                           color: AppColor.cFDF5F0,
                           shape: BoxShape.rectangle,
@@ -195,7 +195,7 @@ class _DriverNavigationScreenState extends State<DriverNavigationScreen> {
                     selectedIcon: Padding(
                       padding: EdgeInsets.symmetric(vertical: 20.h),
                       child: Container(
-                        height: 45,
+                        height: 45.h,
                         decoration: const BoxDecoration(
                           color: AppColor.cFDF5F0,
                           shape: BoxShape.rectangle,

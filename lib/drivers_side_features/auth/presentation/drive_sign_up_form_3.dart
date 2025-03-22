@@ -1,15 +1,20 @@
+import 'dart:developer';
+
 import 'package:andrewngugi_rider_app/assets_helper/app_colors/app_colors.dart';
 import 'package:andrewngugi_rider_app/assets_helper/app_font/app_font.dart';
 import 'package:andrewngugi_rider_app/assets_helper/app_image/app_image.dart';
 import 'package:andrewngugi_rider_app/common_widgets/custom_appbar.dart';
 import 'package:andrewngugi_rider_app/common_widgets/custom_button.dart';
 import 'package:andrewngugi_rider_app/drivers_side_features/auth/widget/driver_sign_updrop_down.dart';
+import 'package:andrewngugi_rider_app/drivers_side_features/controller/AppController.dart';
 import 'package:andrewngugi_rider_app/helpers/all_routes.dart';
 import 'package:andrewngugi_rider_app/helpers/navigation_service.dart';
+import 'package:andrewngugi_rider_app/helpers/toast.dart';
 import 'package:andrewngugi_rider_app/helpers/ui_helpers.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 import '../widget/custom_userProfile_text_field.dart';
 
@@ -21,12 +26,28 @@ class DriveSignUpForm3 extends StatefulWidget {
 }
 
 class _DriveSignUpForm3State extends State<DriveSignUpForm3> {
-  final drivingOptionController = DropdownButtonController();
-  TextEditingController drivingLicence = TextEditingController();
-  bool isChecked = false;
+
 
   @override
   Widget build(BuildContext context) {
+
+
+    AppController controller = Get.put(AppController());
+    List<String> timePeriods = [];
+
+    // Add months (1 month to 12 months)
+    for (int i = 1; i <= 12; i++) {
+      timePeriods.add('$i month${i > 1 ? 's' : ''}');
+    }
+
+    // Add years (1 year to 10 years)
+    for (int i = 1; i <= 10; i++) {
+      timePeriods.add('$i year${i > 1 ? 's' : ''}');
+    }
+
+    // Print the list
+    print(timePeriods);
+
     return Container(
       decoration: const BoxDecoration(
           image: DecorationImage(image: AssetImage(AppImages.bgImage))),
@@ -136,7 +157,7 @@ class _DriveSignUpForm3State extends State<DriveSignUpForm3> {
 
                             ///>>>>>>>>>>>>>>>>>>>> Model type >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
                             CustomUserprofileTextField(
-                              controller: drivingLicence,
+                              controller: controller.drivingLicence,
                               wight: double.infinity,
                               title: "Driving License*",
                               hintText: "Enter your driving license number",
@@ -144,9 +165,11 @@ class _DriveSignUpForm3State extends State<DriveSignUpForm3> {
                             UIHelper.verticalSpace(16.h),
                             ///>>>>>>>>>>>>>>>>>>>> Vehicle Type >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
                             DropdownButtonExample(
-                              controller: drivingOptionController,
+                              controller: controller.drivingExperienceController,
                               title: 'Driving Experience',
-                              list: const ["Option 1", "Option 2", "Option 3"],
+                              // list: const ["Option 1", "Option 2", "Option 3"],
+                              list: timePeriods
+
                             ),
                             UIHelper.verticalSpace(16.h),
 
@@ -157,14 +180,13 @@ class _DriveSignUpForm3State extends State<DriveSignUpForm3> {
                               children: [
                                 Checkbox(
                                   side: const BorderSide(
-                                    color: Colors.black54,
-                                    // Border color when unchecked
+                                    color: Colors.black54, // Border color when unchecked
                                     width: 2.0,
                                   ),
-                                  value: isChecked,
+                                  value: controller.termsAndCondition == 1, // Convert int to bool
                                   onChanged: (bool? value) {
                                     setState(() {
-                                      isChecked = value ?? false;
+                                      controller.termsAndCondition = value == true ? 1 : 0; // Convert bool to int
                                     });
                                   },
                                 ),
@@ -203,9 +225,12 @@ class _DriveSignUpForm3State extends State<DriveSignUpForm3> {
                       ///>>>>>>>>>>>>>>>>>>>>  Button >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
                       customButton(
                           name: "Continue",
-                          onCallBack: () {
-                            NavigationService.navigateTo(Routes.driverSignUpVerification);
-                          },
+                          onCallBack:  controller.termsAndCondition ==0?(){
+                            ToastUtil.showLongToast(" Check the terms and condition");
+                          }:  () {
+                            log(">>>>>>>>>>>>>>>>>>>>>>> driving exparince ${controller.drivingExperienceController.value}) }");
+                            NavigationService.navigateTo(Routes.passwordConformation);
+                            },
                           borderColor: Colors.transparent,
                           color: AppColor.buttonColor,
                           context: context),
