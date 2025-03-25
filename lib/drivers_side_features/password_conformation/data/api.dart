@@ -4,7 +4,6 @@ import 'package:andrewngugi_rider_app/networks/dio/dio.dart';
 import 'package:andrewngugi_rider_app/networks/endpoints.dart';
 import 'package:andrewngugi_rider_app/networks/exception_handler/data_source.dart';
 import 'package:dio/dio.dart';
-import 'package:image_picker/image_picker.dart';
 final class SetPasswordApi {
   static final SetPasswordApi _singleton = SetPasswordApi._internal();
 

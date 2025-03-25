@@ -1,6 +1,5 @@
 // import 'dart:io';
 import 'dart:io';
-import 'dart:math';
 
 import 'package:andrewngugi_rider_app/assets_helper/app_colors/app_colors.dart';
 import 'package:andrewngugi_rider_app/assets_helper/app_font/app_font.dart';
@@ -622,12 +621,6 @@ import '../widget/custom_userProfile_text_field.dart';
 //
 // }
 
-import 'dart:io';
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:intl/intl.dart';
-import 'package:image_picker/image_picker.dart';
-import '../widget/custom_userProfile_text_field.dart';
 
 class DriverSignUpForm extends StatefulWidget {
   const DriverSignUpForm({super.key, required this.vehicleId, required this.area});

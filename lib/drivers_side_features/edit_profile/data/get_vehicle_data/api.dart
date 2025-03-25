@@ -1,5 +1,3 @@
-import 'package:andrewngugi_rider_app/drivers_side_features/auth/model/driver_area_model.dart';
-import 'package:andrewngugi_rider_app/drivers_side_features/edit_profile/model/personal_data_model.dart';
 import 'package:andrewngugi_rider_app/drivers_side_features/edit_profile/model/vehicle_profile_model.dart';
 import 'package:andrewngugi_rider_app/networks/exception_handler/data_source.dart';
 import 'package:dio/dio.dart';

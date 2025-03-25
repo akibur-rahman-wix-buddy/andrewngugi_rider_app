@@ -19,7 +19,6 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:image_picker/image_picker.dart';
 import '../../edit_profile/presentation/widgets/pin_code_fields.dart';
 import '../widget/custom_userProfile_text_field.dart';
-import '../widget/second_sign_up_image_picker.dart';
 // //
 // // class DriveSignUpFrom2 extends StatefulWidget {
 // //   const DriveSignUpFrom2({super.key});
@@ -267,7 +266,6 @@ class DriveSignUpFrom2 extends StatefulWidget {
 }
 
 class _DriveSignUpFrom2State extends State<DriveSignUpFrom2> {
-  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   final Map<String, String?> _errors = {};
 
   final AppController controller = Get.put(AppController());

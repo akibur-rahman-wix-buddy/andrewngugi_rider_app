@@ -6,7 +6,6 @@ import 'package:andrewngugi_rider_app/assets_helper/app_icons/app_icons.dart';
 import 'package:andrewngugi_rider_app/assets_helper/app_image/app_image.dart';
 import 'package:andrewngugi_rider_app/common_widgets/common_button.dart';
 import 'package:andrewngugi_rider_app/drivers_side_features/controller/AppController.dart';
-import 'package:andrewngugi_rider_app/helpers/all_routes.dart';
 import 'package:andrewngugi_rider_app/helpers/navigation_service.dart';
 import 'package:andrewngugi_rider_app/helpers/toast.dart';
 import 'package:andrewngugi_rider_app/helpers/ui_helpers.dart';

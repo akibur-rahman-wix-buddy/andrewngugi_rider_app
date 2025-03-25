@@ -1,8 +1,5 @@
 import 'dart:developer';
-import 'package:andrewngugi_rider_app/constants/app_constants.dart';
-import 'package:andrewngugi_rider_app/helpers/di.dart';
 import 'package:andrewngugi_rider_app/helpers/toast.dart';
-import 'package:andrewngugi_rider_app/networks/dio/dio.dart';
 import 'package:andrewngugi_rider_app/networks/rx_base.dart';
 import 'package:dio/dio.dart';
 import 'package:image_picker/image_picker.dart';

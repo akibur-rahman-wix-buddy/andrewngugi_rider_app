@@ -3,7 +3,6 @@
 import 'dart:io';
 
 import 'package:andrewngugi_rider_app/assets_helper/app_icons/app_icons.dart';
-import 'package:andrewngugi_rider_app/assets_helper/app_image/app_image.dart';
 import 'package:andrewngugi_rider_app/networks/endpoints.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';

@@ -2,11 +2,8 @@
 import 'dart:developer';
 import 'package:dio/dio.dart';
 import 'package:rxdart/rxdart.dart';
-import '../../../../../constants/app_constants.dart';
-import '../../../../../helpers/di.dart';
 import '../../../../../helpers/toast.dart';
 
-import '../../../../../networks/dio/dio.dart';
 import '../../../../../networks/rx_base.dart';
 import 'api.dart';
 

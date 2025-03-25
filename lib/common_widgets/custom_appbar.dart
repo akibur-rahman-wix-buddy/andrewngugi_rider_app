@@ -5,7 +5,6 @@ import 'package:flutter_svg/svg.dart';
 
 
 import '../assets_helper/app_font/app_font.dart';
-import '../gen/assets.gen.dart';
 import '../helpers/navigation_service.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {

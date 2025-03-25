@@ -1,4 +1,3 @@
-import 'dart:developer';
 import 'package:andrewngugi_rider_app/assets_helper/app_colors/app_colors.dart';
 import 'package:andrewngugi_rider_app/assets_helper/app_font/app_font.dart';
 import 'package:andrewngugi_rider_app/assets_helper/app_image/app_image.dart';

@@ -2,8 +2,10 @@ import 'package:andrewngugi_rider_app/assets_helper/app_colors/app_colors.dart';
 import 'package:andrewngugi_rider_app/assets_helper/app_font/app_font.dart';
 import 'package:andrewngugi_rider_app/assets_helper/app_icons/app_icons.dart';
 import 'package:andrewngugi_rider_app/assets_helper/app_image/app_image.dart';
+import 'package:andrewngugi_rider_app/constants/app_constants.dart';
 import 'package:andrewngugi_rider_app/drivers_side_features/onboarding_screen/size_config.dart';
 import 'package:andrewngugi_rider_app/helpers/all_routes.dart';
+import 'package:andrewngugi_rider_app/helpers/di.dart';
 import 'package:andrewngugi_rider_app/helpers/navigation_service.dart';
 import 'package:andrewngugi_rider_app/helpers/ui_helpers.dart';
 import 'package:flutter/material.dart';
@@ -114,16 +116,15 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                               padding: const EdgeInsets.all(30),
                               child: TextButton(
                                 onPressed: () {
-                                  NavigationService.navigateTo(
-                                      Routes.driverSignIn);
+                                  appData.write(kKeyfirstTime,false);
+                                  NavigationService.navigateTo(Routes.driverSignIn);
                                 },
-                                style: TextButton.styleFrom(
-                                  elevation: 0,
-                                  textStyle: TextStyle(
-                                    fontWeight: FontWeight.w600,
-                                    fontSize: width <= 550 ? 13 : 17,
-                                  ),
+
+                                style: TextButton.styleFrom(elevation: 0,
+                                  textStyle: TextStyle(fontWeight: FontWeight.w600, fontSize: width <= 550 ? 13 : 17,),
                                 ),
+
+
                                 child: Row(
                                   mainAxisSize: MainAxisSize.min,
                                   children: [

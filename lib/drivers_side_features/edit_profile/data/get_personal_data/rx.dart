@@ -1,5 +1,4 @@
 import 'dart:developer';
-import 'package:andrewngugi_rider_app/drivers_side_features/auth/model/driver_area_model.dart';
 import 'package:andrewngugi_rider_app/drivers_side_features/edit_profile/model/personal_data_model.dart';
 import 'package:andrewngugi_rider_app/helpers/toast.dart';
 import 'package:andrewngugi_rider_app/networks/rx_base.dart';

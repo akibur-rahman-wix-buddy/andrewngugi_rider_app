@@ -3,14 +3,12 @@ import 'package:andrewngugi_rider_app/assets_helper/app_font/app_font.dart';
 import 'package:andrewngugi_rider_app/assets_helper/app_image/app_image.dart';
 import 'package:andrewngugi_rider_app/common_widgets/custom_appbar.dart';
 import 'package:andrewngugi_rider_app/common_widgets/custom_button.dart';
-import 'package:andrewngugi_rider_app/drivers_side_features/controller/AppController.dart';
 import 'package:andrewngugi_rider_app/helpers/navigation_service.dart';
 import 'package:andrewngugi_rider_app/helpers/toast.dart';
 import 'package:andrewngugi_rider_app/helpers/ui_helpers.dart';
 import 'package:andrewngugi_rider_app/networks/api_acess.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 import 'package:lottie/lottie.dart';
 

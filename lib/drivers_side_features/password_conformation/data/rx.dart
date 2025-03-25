@@ -2,7 +2,6 @@ import 'dart:developer';
 import 'package:andrewngugi_rider_app/helpers/toast.dart';
 import 'package:andrewngugi_rider_app/networks/rx_base.dart';
 import 'package:dio/dio.dart';
-import 'package:image_picker/image_picker.dart';
 import 'package:rxdart/streams.dart';
 import 'api.dart';
 

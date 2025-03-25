@@ -52,7 +52,7 @@ class _LoadingState extends State<Loading> {
       return appData.read(kKeyIsLoggedIn)
           ?const DriverNavigationScreen()
           : appData.read(kKeyfirstTime)
-          ? const OnboardingScreen() //AuthRuleScreen()
+          ? const OnboardingScreen()
           : const DriverNavigationScreen();
     }
     /* return TimeAppointmentScreen();

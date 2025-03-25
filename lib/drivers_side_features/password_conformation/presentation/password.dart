@@ -4,7 +4,6 @@ import 'package:andrewngugi_rider_app/assets_helper/app_image/app_image.dart';
 import 'package:andrewngugi_rider_app/common_widgets/custom_appbar.dart';
 import 'package:andrewngugi_rider_app/common_widgets/custom_button.dart';
 import 'package:andrewngugi_rider_app/common_widgets/pass_text_field.dart';
-import 'package:andrewngugi_rider_app/helpers/toast.dart';
 import 'package:andrewngugi_rider_app/helpers/ui_helpers.dart';
 import 'package:andrewngugi_rider_app/networks/api_acess.dart';
 import 'package:flutter/material.dart';

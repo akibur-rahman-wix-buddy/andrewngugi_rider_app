@@ -1,6 +1,5 @@
 import 'dart:developer';
 import 'dart:io';
-import 'package:andrewngugi_rider_app/constants/app_constants.dart';
 import 'package:andrewngugi_rider_app/drivers_side_features/controller/AppController.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
